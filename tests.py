@@ -73,5 +73,13 @@ class TestMergeSort:
     def test_simple_sort(self):
         assert merge_sort(iter([10,12,5,2,15,3,2])) == [2,2,3, 5, 10,12,15]
 
+    def test_big_sort(self):
+        TEST_RAGE = 10000
+        k = reversed(range(TEST_RAGE))
+        res = merge_sort(iter(k))
+        test_res = iter(range(TEST_RAGE))
+        for i in res:
+            assert i == test_res.__next__()
+
 
 
